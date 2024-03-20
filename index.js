@@ -1,28 +1,35 @@
-const sumUtils = (function sumUtils(){
-    let value = 0;
-    function bombapatch(pontos) {
-        return value += pontos;
-    }
+const carro = (function carro(){
+   let tanque = 0 
+   let velocidade = 0
     
+    function acelerarCarro(velocidadekm) {
+        return velocidade += velocidadekm;
+    }
+    function mostrarVelocidade(){
+        console.log(velocidade)
+    }
+
+
     return {
-        rasteira() {
-            return bombapatch(-1);
+        acelerar(velocidadekm) {
+            return acelerarCarro(velocidadekm);
 
         },
-        golaco(){
+        velocidade(){
+                return mostrarVelocidade();
+        },
+        abastecer(){
             return bombapatch(1);
         },
-        placar(){
+        frear(){
+            return console.log(value);
+        },
+        cambio(){
             return console.log(value);
         }
     }
 })();
+carro.velocidade();
+carro.acelerar(2);
+carro.velocidade();
 
-sumUtils.placar();
-
-sumUtils.golaco();
-sumUtils.golaco();
-sumUtils.placar();
-
-sumUtils.rasteira();
-sumUtils.placar();
